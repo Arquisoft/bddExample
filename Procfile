@@ -1,0 +1,1 @@
+web: java -Dserver.port=$PORT -jar target/VotingSystem_0-0.0.1.jar

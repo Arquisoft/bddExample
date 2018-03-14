@@ -1,0 +1,17 @@
+language: java
+sudo: required
+jdk:
+- oraclejdk8
+after_success:
+- bash <(curl -s https://codecov.io/bash)
+addons:
+  firefox: "44.0"
+before_install:
+- chmod +x travis-kafka.sh
+- mysql -e 'CREATE DATABASE app;'
+- ./travis-kafka.sh
+install: true
+before_script:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3 # give xvfb some time to start
