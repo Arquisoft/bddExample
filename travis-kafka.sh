@@ -2,7 +2,7 @@
 
 set -eu
 
-MIRROR=http://mirror.ox.ac.uk/sites/rsync.apache.org/kafka/0.10.2.0/kafka_2.11-0.10.2.0.tgz
+MIRROR=http://apache.rediris.es/kafka/1.0.0/kafka_2.11-1.0.0.tgz
 
 test -f kafka.tgz || wget $MIRROR -O kafka.tgz
 mkdir -p kafka && tar xzf kafka.tgz -C kafka --strip-components 1
