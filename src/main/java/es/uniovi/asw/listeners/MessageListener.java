@@ -3,13 +3,10 @@ package es.uniovi.asw.listeners;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
-import io.reactivex.Observer;
 import org.apache.log4j.Logger;
 import org.springframework.kafka.annotation.KafkaListener;
 
 import javax.annotation.ManagedBean;
-
-import static io.reactivex.Observable.create;
 
 /**
  * Created by herminio on 28/12/16.
