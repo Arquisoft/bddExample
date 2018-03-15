@@ -5,7 +5,7 @@ jdk:
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 addons:
-  firefox: "44.0"
+  firefox: "46.0"
 before_install:
 - chmod +x travis-kafka.sh
 - mysql -e 'CREATE DATABASE app;'
