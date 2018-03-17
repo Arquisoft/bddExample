@@ -1,11 +1,7 @@
-Feature: Being able to login
-Scenario: Login
-  Login with some username
+# language: en
+Feature: User management
 
-    Given a list of users:
-      | name    | password |
-      | pepe    | pepe12   |
-      | luis    | siuldfdfdf     |
-      | mari    | mmm      |
-    When I login with name "luis" and password "siul"
-    Then I receive a welcome message
+Scenario: Create first user
+Given there are no users
+When I create a user "Pepe" with password "Pepe12"
+Then The number of users is 1
