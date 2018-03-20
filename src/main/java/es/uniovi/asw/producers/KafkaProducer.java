@@ -1,6 +1,7 @@
 package es.uniovi.asw.producers;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
@@ -15,7 +16,7 @@ import javax.annotation.ManagedBean;
 @ManagedBean
 public class KafkaProducer {
 
-    private static final Logger logger = Logger.getLogger(KafkaProducer.class);
+    private final Logger logger = LoggerFactory.getLogger(KafkaProducer.class);
 
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;

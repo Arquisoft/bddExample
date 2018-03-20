@@ -3,7 +3,8 @@ package es.uniovi.asw.listeners;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
 
 import javax.annotation.ManagedBean;
@@ -14,7 +15,7 @@ import javax.annotation.ManagedBean;
 @ManagedBean
 public class MessageListener {
 
-    private static final Logger logger = Logger.getLogger(MessageListener.class);
+    private final Logger logger = LoggerFactory.getLogger(MessageListener.class);
 
     private ObservableEmitter<String> observer;
 
