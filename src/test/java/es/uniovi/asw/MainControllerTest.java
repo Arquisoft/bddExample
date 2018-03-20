@@ -10,13 +10,15 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.test.IntegrationTest;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.*;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.context.ApplicationContext;
+
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(Application.class)
@@ -29,10 +31,10 @@ public class MainControllerTest {
   @Autowired
 	private MockMvc mvc;
   
-  @Before
+/*  @Before
   public void setUp() throws Exception {
     mvc = MockMvcBuilders.webAppContextSetup(context).build();
-  }
+  } */
 
   @Test
   public void testLanding() throws Exception {
