@@ -5,11 +5,12 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.test.IntegrationTest;
-import org.springframework.boot.test.SpringApplicationContextLoader;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -24,8 +25,9 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import es.uniovi.asw.Application;
 
-@ContextConfiguration(classes=Application.class, loader=SpringApplicationContextLoader.class)
-@IntegrationTest
+@ContextConfiguration(classes=Application.class)
+@SpringBootTest({ "server.port=0" })
+@RunWith(SpringRunner.class)
 @WebAppConfiguration
 public class LandingSteps {
   
@@ -35,8 +37,8 @@ public class LandingSteps {
   protected MockMvc mvc;
   protected MvcResult result;
   
-  @Value("${local.server.port}")
-  protected int port;
+//  @Value("${local.server.port}")
+//  protected int port;
 
   
   @When("^the client calls /$")
